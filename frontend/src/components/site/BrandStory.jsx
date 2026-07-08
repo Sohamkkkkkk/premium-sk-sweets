@@ -1,4 +1,4 @@
-import { IMG } from "@/data/site";
+import { PIMG } from "@/data/site";
 
 const STATS = [
   { value: "25+", label: "Years of Trust" },
@@ -11,19 +11,19 @@ export default function BrandStory() {
     <section
       id="story"
       data-testid="brand-story-section"
-      className="relative bg-cream py-24 md:py-32"
+      className="relative bg-cream py-28 md:py-40"
     >
       <div className="container-luxe">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-24 items-center">
           {/* Text */}
           <div className="lg:col-span-6 order-2 lg:order-1">
             <span className="overline">Our Story</span>
-            <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05] text-charcoal">
+            <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.02] text-charcoal tracking-[-0.015em]">
               Serving Happiness<br />
               <span className="italic text-burgundy">Since 1999</span>
             </h2>
-            <div className="mt-6 gold-hairline max-w-[220px]" />
-            <div className="mt-8 space-y-5 text-lg text-charcoal/80 leading-relaxed font-light">
+            <div className="mt-7 gold-hairline max-w-[220px]" />
+            <div className="mt-9 space-y-6 text-lg text-charcoal/80 leading-[1.75] font-light">
               <p>
                 For over two decades, SK Sweets Food Court has been bringing together
                 authentic Indian flavours, handcrafted sweets, celebration cakes and
@@ -39,20 +39,20 @@ export default function BrandStory() {
           {/* Image */}
           <div className="lg:col-span-6 order-1 lg:order-2">
             <div className="relative">
-              <div className="img-zoom rounded-[20px] overflow-hidden aspect-[4/5] border border-ivory shadow-premium">
+              <div className="img-zoom rounded-[24px] overflow-hidden aspect-[4/5] border border-copper/15 shadow-premium">
                 <img
-                  src={IMG.logoWall}
-                  alt="SK Sweets Food Court signature marble and gold logo installation inside the store"
+                  src={PIMG.brandStoryHero}
+                  alt="Traditional Indian mithai — handcrafted with care"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 hidden md:block">
-                <div className="bg-burgundy text-cream px-6 py-5 rounded-[16px] shadow-premium-hover">
-                  <div className="text-[10px] tracking-[0.28em] uppercase text-gold-light">
+              <div className="absolute -bottom-8 -left-8 hidden md:block">
+                <div className="bg-burgundy text-cream px-7 py-6 rounded-[20px] shadow-premium-hover border border-gold/25">
+                  <div className="text-[10px] tracking-[0.32em] uppercase text-gold-light">
                     Established
                   </div>
-                  <div className="font-serif text-4xl mt-1">1999</div>
+                  <div className="font-serif text-5xl mt-2 tracking-tight">1999</div>
                 </div>
               </div>
             </div>
@@ -60,17 +60,17 @@ export default function BrandStory() {
         </div>
 
         {/* Stats */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-4">
+        <div className="mt-24 md:mt-28 grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-4">
           {STATS.map((s) => (
             <div
               key={s.label}
-              className="border-t border-copper/20 pt-6 flex flex-col items-start"
+              className="border-t border-copper/25 pt-7 flex flex-col items-start"
               data-testid={`stat-${s.label.toLowerCase().replace(/\s/g, "-")}`}
             >
-              <div className="font-serif text-5xl md:text-6xl text-burgundy leading-none tracking-tight">
+              <div className="font-serif text-5xl md:text-6xl text-burgundy leading-none tracking-[-0.02em]">
                 {s.value}
               </div>
-              <div className="mt-3 text-charcoal/70 text-sm tracking-wide uppercase">
+              <div className="mt-4 text-charcoal/70 text-[11px] tracking-[0.28em] uppercase">
                 {s.label}
               </div>
             </div>

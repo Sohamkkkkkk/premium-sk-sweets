@@ -1,31 +1,31 @@
 import { MapPin, Clock, Phone, MessageCircle, ArrowUpRight } from "lucide-react";
-import { IMG, SITE, waLink, telLink } from "@/data/site";
+import { PIMG, SITE, waLink, telLink } from "@/data/site";
 
 export default function VisitUs() {
   return (
     <section
       id="visit"
       data-testid="visit-us-section"
-      className="relative bg-cream py-24 md:py-32"
+      className="relative bg-cream py-28 md:py-40"
     >
       <div className="container-luxe">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-stretch">
           {/* Visual */}
           <div className="lg:col-span-6">
-            <div className="img-zoom relative aspect-[4/5] rounded-[20px] overflow-hidden shadow-premium border border-copper/10 h-full min-h-[380px]">
+            <div className="img-zoom relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-premium border border-copper/15 h-full min-h-[380px]">
               <img
-                src={IMG.desiCounter}
-                alt="SK Sweets Food Court desi sweets counter and dry fruit shelves"
+                src={PIMG.brandStoryHero}
+                alt="Traditional handcrafted Indian sweets — the SK Sweets promise"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-cream">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between text-cream">
                 <div>
-                  <div className="text-[10px] uppercase tracking-[0.3em] text-gold-light">
+                  <div className="text-[10px] uppercase tracking-[0.32em] text-gold-light">
                     Dombivli East
                   </div>
-                  <div className="font-serif text-2xl md:text-3xl mt-1">
+                  <div className="font-serif text-2xl md:text-3xl mt-2">
                     Mahavir Pride, Shop 32
                   </div>
                 </div>
@@ -36,11 +36,11 @@ export default function VisitUs() {
           {/* Details */}
           <div className="lg:col-span-6">
             <span className="overline">Visit Our Store</span>
-            <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl text-charcoal leading-[1.05]">
+            <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl text-charcoal leading-[1.02] tracking-[-0.015em]">
               Walk in.<br />
               <span className="italic text-burgundy">You&rsquo;re family</span>.
             </h2>
-            <div className="mt-8 space-y-5">
+            <div className="mt-10 space-y-6">
               <InfoLine icon={MapPin} label="Address">
                 {SITE.address.line1}, {SITE.address.line2}
                 <br />
@@ -66,7 +66,7 @@ export default function VisitUs() {
               </InfoLine>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-12 flex flex-wrap gap-3">
               <a
                 href={SITE.googleMaps}
                 target="_blank"
@@ -97,14 +97,14 @@ export default function VisitUs() {
 function InfoLine({ icon: Icon, label, children }) {
   return (
     <div className="flex gap-5 items-start">
-      <span className="mt-0.5 inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-copper/30 text-burgundy bg-white/70 backdrop-blur">
+      <span className="mt-0.5 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-copper/30 text-burgundy bg-white/70 backdrop-blur">
         <Icon className="h-5 w-5" strokeWidth={1.5} />
       </span>
       <div>
-        <div className="text-[10px] uppercase tracking-[0.28em] text-copper font-medium">
+        <div className="text-[10px] uppercase tracking-[0.32em] text-copper font-medium">
           {label}
         </div>
-        <div className="mt-1 text-[15px] md:text-base text-charcoal leading-relaxed">
+        <div className="mt-2 text-[15px] md:text-base text-charcoal leading-[1.7]">
           {children}
         </div>
       </div>

@@ -1,29 +1,27 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { IMG } from "@/data/site";
-
-const IMAGES = [
-  { src: IMG.sweetCounter, alt: "Sweet counter with pedas and barfis", tall: true },
-  { src: IMG.bengaliCounter, alt: "Bengali sweets — rasmalai and gulab jamun", tall: false },
-  { src: IMG.desiCounter, alt: "Balusahi, mysore pak and desi ghee sweets", tall: false },
-  { src: IMG.cakesRasmalai, alt: "Fresh cream cakes and rasmalai", tall: true },
-  { src: IMG.imported, alt: "Imported chocolates and biscuits", tall: false },
-];
+import { GALLERY } from "@/data/gallery";
 
 export default function GalleryPreview() {
+  // Show first 5 store photos as a teaser leading to /gallery
+  const items = GALLERY.slice(0, 5);
   return (
     <section
       data-testid="gallery-preview-section"
-      className="relative bg-cream py-24 md:py-32"
+      className="relative bg-cream py-28 md:py-40"
     >
       <div className="container-luxe">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
           <div className="max-w-2xl">
             <span className="overline">Inside The Store</span>
-            <h2 className="mt-4 font-serif text-4xl md:text-5xl lg:text-6xl text-charcoal leading-[1.05]">
+            <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-6xl text-charcoal leading-[1.02] tracking-[-0.015em]">
               A quiet luxury,<br />
               <span className="italic text-burgundy">on display</span>.
             </h2>
+            <p className="mt-6 text-charcoal-muted text-[15px] md:text-base leading-[1.75] max-w-xl">
+              A curated glimpse into the counters, shelves and interiors of our Dombivli East
+              flagship. All real. All ours.
+            </p>
           </div>
           <Link to="/gallery" className="btn-secondary" data-testid="gallery-view-all">
             View Full Gallery
@@ -31,13 +29,14 @@ export default function GalleryPreview() {
           </Link>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-          {IMAGES.map((img, i) => (
-            <div
-              key={i}
-              className={`img-zoom overflow-hidden rounded-[16px] md:rounded-[20px] border border-copper/10 shadow-premium hover:shadow-premium-hover transition-shadow duration-500 ${
-                img.tall ? "row-span-2 aspect-[3/5]" : "aspect-[4/5]"
-              } ${i === 0 ? "col-span-2 md:col-span-2 md:row-span-2" : ""}`}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+          {items.map((img, i) => (
+            <Link
+              to="/gallery"
+              key={img.id}
+              className={`img-zoom overflow-hidden rounded-[20px] border border-copper/15 shadow-premium hover:shadow-premium-hover transition-shadow duration-500 block ${
+                i === 0 ? "col-span-2 md:col-span-2 md:row-span-2 aspect-square md:aspect-auto md:h-full" : "aspect-[4/5]"
+              }`}
               data-testid={`gallery-tile-${i}`}
             >
               <img
@@ -46,7 +45,7 @@ export default function GalleryPreview() {
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
