@@ -1,0 +1,190 @@
+{
+  "theme": "light",
+  "brand_identity": {
+    "name": "SK Sweets Food Court",
+    "tagline": "Crafting Sweet Memories Since 1999",
+    "vibe": "Luxury Heritage, Timeless, Trustworthy, Authentic, Premium, Elegant",
+    "anti_patterns": [
+      "Flashy or festival-themed clutter",
+      "Restaurant templates",
+      "Heavy gradients or neon colors",
+      "Cheap shadows or overly soft UI without structure",
+      "Cartoon-style icons",
+      "Stock imagery or CSS photo filters"
+    ]
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond, serif",
+    "body_font": "Manrope, sans-serif",
+    "hierarchy": {
+      "h1": "text-5xl md:text-6xl+ tracking-tighter leading-[1.1] font-semibold",
+      "h2": "text-4xl md:text-5xl tracking-tight leading-tight font-medium",
+      "h3": "text-2xl md:text-3xl tracking-tight leading-snug",
+      "h4": "text-xl font-medium tracking-wide",
+      "body_lg": "text-lg md:text-xl leading-relaxed text-charcoal/90",
+      "body": "text-base leading-relaxed text-charcoal/80",
+      "overline": "text-sm uppercase tracking-[0.2em] font-medium text-copper"
+    },
+    "rules": [
+      "Never use default generic fonts like Inter, Roboto, Playfair, or Space Grotesk.",
+      "Overlines must be Manrope, uppercase, widely tracked, and muted copper.",
+      "Headings must use Cormorant Garamond to establish traditional heritage luxury.",
+      "Line height for headings must be tight (leading-none or leading-[1.1]). Line height for body must be loose (leading-relaxed)."
+    ]
+  },
+  "colors": {
+    "base": {
+      "cream": "#FDFBF7",
+      "ivory": "#F5F2EA",
+      "white": "#FFFFFF"
+    },
+    "brand": {
+      "burgundy_deep": "#5A1017",
+      "burgundy_muted": "#8A2B35",
+      "gold_luxury": "#C5A028",
+      "gold_light": "#E8D394",
+      "copper_muted": "#A6632B"
+    },
+    "text": {
+      "charcoal": "#1C1A1A",
+      "muted": "#5C5858"
+    },
+    "utility": {
+      "whatsapp_green": "#25D366",
+      "swiggy_orange": "#FC8019"
+    },
+    "rules": [
+      "Backgrounds must strictly alternate between Cream and Ivory. No pure white backgrounds for large sections to avoid a sterile look.",
+      "Burgundy is for primary CTAs and major accent moments. Do not overuse.",
+      "Dark Charcoal must be used for all primary text for readability, never pure black.",
+      "Do NOT use gradients on text or backgrounds. Stick to solid luxury tones."
+    ]
+  },
+  "visual_enhancers": {
+    "radii": {
+      "sm": "rounded-md",
+      "md": "rounded-xl",
+      "lg": "rounded-[20px]",
+      "full": "rounded-full"
+    },
+    "shadows": {
+      "premium_card": "shadow-[0_8px_30px_rgba(28,26,26,0.04)]",
+      "premium_hover": "shadow-[0_20px_40px_rgba(28,26,26,0.08)]",
+      "glass": "shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
+    },
+    "surfaces": {
+      "glass_header": "backdrop-blur-xl bg-[#FDFBF7]/80 border-b border-burgundy_deep/5",
+      "solid_card": "bg-white border border-[#F5F2EA]"
+    }
+  },
+  "icons": {
+    "library": "@phosphor-icons/react",
+    "weight": "light",
+    "rules": [
+      "Use 'light' or 'regular' weight Phosphor icons to maintain a premium outlined look.",
+      "Never use bold, duotone, or filled icons unless for specific brand logos like WhatsApp."
+    ]
+  },
+  "media_and_images": {
+    "rules": [
+      "MANDATORY: Use ONLY the provided real photographs. NO stock images.",
+      "NO CSS photo filters. Do not alter photographs with grayscale, sepia, or artificial tinting.",
+      "Permitted image treatments: object-cover, border-radius (20px), lazy loading.",
+      "Hover effect: Subtle zoom only (scale-105 transition-transform duration-700 ease-out).",
+      "Image overlays: For text legibility over hero images, use max bg-black/20 or a targeted gradient. Never completely dim the image."
+    ],
+    "assignments": {
+      "hero_background": {
+        "url": "https://customer-assets.emergentagent.com/job_premium-sweets-dev/artifacts/xvzqdlzk_20260701_120634.webp",
+        "description": "Interior wide shot with khakhra aisle, chandelier, product shelves."
+      },
+      "brand_story_split": {
+        "url": "https://customer-assets.emergentagent.com/job_premium-sweets-dev/artifacts/t0vp2sib_20260701_120302.webp",
+        "description": "SK Sweets marble/gold logo wall installation."
+      },
+      "signature_sweets_1": {
+        "url": "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/yb2h66iw_20260701_120358.webp",
+        "description": "Sweet counter — pedas, barfis, mewa bites."
+      },
+      "signature_sweets_2": {
+        "url": "https://customer-assets.emergentagent.com/job_premium-sweets-dev/artifacts/j9xhqd9e_20260701_120502.webp",
+        "description": "Bengali sweets hot counter."
+      },
+      "category_cakes_rasmalai": {
+        "url": "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/1414zhp7_20260701_120447.webp"
+      },
+      "category_dry_fruits_traditional": {
+        "url": "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/whiceybs_20260701_120613.webp"
+      },
+      "category_imported_chocolates": {
+        "url": "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/cjv3uigi_20260701_121811.webp"
+      },
+      "category_beverages": {
+        "url": "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/tz1wip6h_20260701_120425.webp"
+      },
+      "logos": {
+        "primary": "/assets/logo.png",
+        "transparent": "/assets/logo-mark-trans.png"
+      }
+    }
+  },
+  "components": {
+    "navigation": {
+      "desktop": "Sticky nav. Initially transparent over hero (text-white). On scroll, transitions to glass_header (text-charcoal).",
+      "mobile_drawer": "Premium side drawer. Ivory background, huge Cormorant Garamond links, muted copper dividers."
+    },
+    "buttons": {
+      "primary": "bg-burgundy_deep text-white hover:bg-burgundy_muted rounded-full px-8 py-3 transition-colors duration-300 font-medium tracking-wide",
+      "secondary": "bg-transparent border border-burgundy_deep text-burgundy_deep hover:bg-burgundy_deep hover:text-white rounded-full px-8 py-3 transition-colors duration-300 font-medium",
+      "whatsapp": "bg-utility-whatsapp_green text-white hover:bg-green-600 rounded-full px-6 py-3 flex items-center gap-2 font-medium",
+      "swiggy": "bg-utility-swiggy_orange text-white hover:bg-orange-600 rounded-full px-6 py-3 flex items-center gap-2 font-medium"
+    },
+    "product_card": {
+      "layout": "Image top (rounded-t-[20px] or inner 16px radius if padded), content bottom. Border border-ivory, bg-white.",
+      "image_container": "overflow-hidden. Image must scale-105 on group-hover.",
+      "content": "p-6. Title in Cormorant Garamond (text-2xl). Subtitle in Manrope. No prices! WhatsApp CTA button."
+    },
+    "catalogue": {
+      "filters": "Pill-shaped toggle buttons. Active: bg-burgundy_deep text-white. Inactive: bg-ivory text-charcoal hover:bg-cream border border-gold_light/30.",
+      "search": "Minimalist input field, bottom-border only or very subtle rounded full, using Phosphor MagnifyingGlass."
+    }
+  },
+  "grids_and_layouts": {
+    "spacing": "Use generous padding: py-24 or py-32 for major sections.",
+    "homepage_flow": [
+      "Hero (Full screen height min-h-[90vh], interior background, centered typography, clear CTAs)",
+      "Brand Story (Split screen: Left Text, Right Logo Wall Image, highly asymmetrical)",
+      "Signature Specialties (Bento/Tetris grid of top 2-3 images, large luxury cards)",
+      "Product Categories (4-column grid on desktop, 1-column on mobile. Highly visual)",
+      "Product Catalogue (Searchable, filterable masonry or strict grid. NO PRICES)",
+      "Fast Food & Celebration Orders (Full-width distinct sections with ivory background to break layout)",
+      "Gallery Preview (Horizontal scroll or masonry of 4-5 images)",
+      "Reviews (Curated text-based elegant cards, ivory bg)",
+      "Visit Us / Footer (Map, hours, deep burgundy background for footer)"
+    ]
+  },
+  "motion": {
+    "global": "Implement @studio-freight/react-lenis for smooth scrolling.",
+    "interactions": "Micro-interactions on all buttons. 700ms ease-out zoom on images. Staggered fade-up for grid items.",
+    "page_load": "Subtle fade-in for hero text. No excessive bounces or spring animations."
+  },
+  "instructions_to_main_agent": [
+    "Install required dependencies: framer-motion, @phosphor-icons/react, @studio-freight/react-lenis.",
+    "DO NOT use generic Shadcn components for marketing sections; build custom HTML/Tailwind elements for layouts to allow exact asymmetrical spacing.",
+    "Implement Shadcn for functional parts ONLY: Dialog (for gallery lightbox), Tabs (for catalogue filtering), Input (for search).",
+    "NO PRICES should be displayed anywhere in the catalogue or cards. It is an inquiry/WhatsApp order-focused catalogue.",
+    "Configure Tailwind with the exact color hex codes provided in this JSON.",
+    "Ensure the transparent-to-solid navigation transition works seamlessly on scroll.",
+    "Add 'data-testid' to all interactive elements."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) where appropriate.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Add specific transitions.",
+    "You MUST NOT center align the app container in CSS.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 for icons.",
+    "Every interaction needs micro-animations - hover states, transitions.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Missing categories = use provided placeholders or structure gracefully. NEVER use text placeholders for images."
+  ]
+}
