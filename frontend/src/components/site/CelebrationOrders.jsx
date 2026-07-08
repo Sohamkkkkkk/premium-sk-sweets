@@ -67,6 +67,15 @@ export default function CelebrationOrders() {
             Contact on WhatsApp
           </a>
           <a
+            href={SITE.swiggy}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-swiggy"
+            data-testid="celebration-cta-swiggy"
+          >
+            Order on Swiggy
+          </a>
+          <a
             href={telLink()}
             className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-light/60 text-cream px-7 py-3 text-sm font-medium tracking-wide bg-transparent hover:bg-cream hover:text-burgundy transition-all duration-300"
             data-testid="celebration-cta-call"

@@ -86,6 +86,15 @@ export default function VisitUs() {
               >
                 WhatsApp Us
               </a>
+              <a
+                href={SITE.swiggy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-swiggy"
+                data-testid="visit-cta-swiggy"
+              >
+                Order on Swiggy
+              </a>
             </div>
           </div>
         </div>

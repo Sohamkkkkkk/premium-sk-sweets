@@ -1,5 +1,5 @@
 import { MessageCircle, Phone } from "lucide-react";
-import { waLink, telLink } from "@/data/site";
+import { SITE, waLink, telLink } from "@/data/site";
 
 export default function FloatingActions() {
   return (
@@ -13,16 +13,29 @@ export default function FloatingActions() {
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
         data-testid="floating-whatsapp"
-        className="inline-flex items-center gap-2 rounded-full bg-whatsapp text-white pl-4 pr-5 py-3 shadow-premium-hover hover:-translate-y-0.5 transition-transform"
+        className="group inline-flex items-center gap-2 rounded-full bg-whatsapp text-white pl-4 pr-5 py-3 shadow-premium-hover hover:-translate-y-0.5 transition-transform"
       >
         <MessageCircle className="h-5 w-5" strokeWidth={1.75} />
         <span className="text-sm font-medium tracking-wide hidden sm:inline">WhatsApp</span>
       </a>
       <a
+        href={SITE.swiggy}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Order on Swiggy"
+        data-testid="floating-swiggy"
+        className="group inline-flex items-center gap-2 rounded-full bg-swiggy text-white pl-4 pr-5 py-3 shadow-premium-hover hover:-translate-y-0.5 transition-transform"
+      >
+        <span className="inline-flex h-5 w-5 items-center justify-center text-[13px] font-bold">
+          S
+        </span>
+        <span className="text-sm font-medium tracking-wide hidden sm:inline">Swiggy</span>
+      </a>
+      <a
         href={telLink()}
         aria-label="Call SK Sweets"
         data-testid="floating-call"
-        className="inline-flex items-center gap-2 rounded-full bg-burgundy text-cream pl-4 pr-5 py-3 shadow-premium-hover hover:-translate-y-0.5 transition-transform"
+        className="group inline-flex items-center gap-2 rounded-full bg-burgundy text-cream pl-4 pr-5 py-3 shadow-premium-hover hover:-translate-y-0.5 transition-transform"
       >
         <Phone className="h-5 w-5" strokeWidth={1.75} />
         <span className="text-sm font-medium tracking-wide hidden sm:inline">Call</span>

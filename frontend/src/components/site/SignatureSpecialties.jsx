@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { SIGNATURES, KAJU_KATLI_VARIANTS } from "@/data/products";
-import { waLink } from "@/data/site";
+import { SITE, waLink } from "@/data/site";
 
 export default function SignatureSpecialties() {
   const [hero, ...rest] = SIGNATURES;
@@ -66,10 +66,20 @@ export default function SignatureSpecialties() {
                 href={waLink("Hi SK Sweets, I would like to order the Kaju Katli collection.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary mt-6"
+                className="btn-whatsapp"
                 data-testid="kaju-katli-cta"
               >
-                Order the Collection
+                Order on WhatsApp
+                <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+              </a>
+              <a
+                href={SITE.swiggy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-swiggy"
+                data-testid="kaju-katli-cta-swiggy"
+              >
+                Order on Swiggy
                 <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
               </a>
             </div>
@@ -114,6 +124,16 @@ function SignatureCard({ item, large = false, className = "" }) {
         >
           Order on WhatsApp
           <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
+        </a>
+        <a
+          href={SITE.swiggy}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-2 inline-flex items-center gap-1.5 rounded-full bg-swiggy/95 text-white px-4 py-2.5 text-sm font-medium tracking-wide hover:bg-swiggy hover:-translate-y-0.5 transition-all shadow-premium"
+          data-testid={`signature-order-${item.id}-swiggy`}
+          aria-label={`Order ${item.name} on Swiggy`}
+        >
+          Swiggy
         </a>
       </div>
     </article>

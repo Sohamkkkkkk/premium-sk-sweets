@@ -63,6 +63,15 @@ export default function Celebrations() {
                 >
                   WhatsApp
                 </a>
+                <a
+                  href={SITE.swiggy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-swiggy"
+                  data-testid={`occasion-cta-swiggy-${i}`}
+                >
+                  Swiggy
+                </a>
                 <a href={telLink()} className="btn-secondary">
                   Call {SITE.phoneDisplay}
                 </a>

@@ -1,12 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, MessageCircle, MapPin } from "lucide-react";
 import { IMG, NAV, SITE, waLink } from "@/data/site";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [orderOpen, setOrderOpen] = useState(false);
+  const orderRef = useRef(null);
   const location = useLocation();
+
+  useEffect(() => {
+    const onDoc = (e) => {
+      if (orderRef.current && !orderRef.current.contains(e.target)) {
+        setOrderOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, []);
 
   const isHome = location.pathname === "/";
 
@@ -105,20 +117,97 @@ export default function Navigation() {
           </nav>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <a
-              href={waLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="nav-cta-whatsapp"
-              className={`hidden md:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 ${
-                solid
-                  ? "bg-burgundy text-cream hover:bg-burgundy-muted"
-                  : "bg-cream text-burgundy hover:bg-white"
-              }`}
-            >
-              <Phone className="h-4 w-4" strokeWidth={1.5} />
-              Order Now
-            </a>
+            <div className="relative hidden md:block" ref={orderRef}>
+              <button
+                type="button"
+                data-testid="nav-order-toggle"
+                onClick={() => setOrderOpen((v) => !v)}
+                aria-expanded={orderOpen}
+                className={`inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 ${
+                  solid
+                    ? "bg-burgundy text-cream hover:bg-burgundy-muted"
+                    : "bg-cream text-burgundy hover:bg-white"
+                }`}
+              >
+                <Phone className="h-4 w-4" strokeWidth={1.5} />
+                Order Now
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${orderOpen ? "rotate-180" : ""}`}
+                  strokeWidth={1.5}
+                />
+              </button>
+              <div
+                className={`absolute right-0 top-full mt-3 w-64 origin-top-right rounded-2xl border border-copper/15 bg-cream shadow-premium-hover p-2 transition-all duration-300 ${
+                  orderOpen
+                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 -translate-y-2 pointer-events-none"
+                }`}
+                data-testid="nav-order-menu"
+              >
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="nav-cta-whatsapp"
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 hover:bg-white transition-colors"
+                >
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-whatsapp text-white">
+                    <MessageCircle className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-medium text-charcoal">WhatsApp</span>
+                    <span className="block text-[11px] text-charcoal-muted">
+                      Instant chat & delivery
+                    </span>
+                  </span>
+                </a>
+                <a
+                  href={SITE.swiggy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="nav-cta-swiggy"
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 hover:bg-white transition-colors"
+                >
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-swiggy text-white text-[13px] font-bold tracking-tight">
+                    S
+                  </span>
+                  <span>
+                    <span className="block text-sm font-medium text-charcoal">Swiggy</span>
+                    <span className="block text-[11px] text-charcoal-muted">
+                      Full menu & tracking
+                    </span>
+                  </span>
+                </a>
+                <a
+                  href={`tel:${SITE.phone}`}
+                  data-testid="nav-cta-call"
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 hover:bg-white transition-colors"
+                >
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-burgundy text-cream">
+                    <Phone className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
+                  <span>
+                    <span className="block text-sm font-medium text-charcoal">Call</span>
+                    <span className="block text-[11px] text-charcoal-muted">
+                      {SITE.phoneDisplay}
+                    </span>
+                  </span>
+                </a>
+                <div className="my-1 border-t border-copper/15" />
+                <a
+                  href={SITE.googleMaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="nav-cta-directions"
+                  className="flex items-center gap-3 rounded-xl px-4 py-3 hover:bg-white transition-colors"
+                >
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-copper/25 text-burgundy">
+                    <MapPin className="h-4 w-4" strokeWidth={1.75} />
+                  </span>
+                  <span className="text-sm font-medium text-charcoal">Get Directions</span>
+                </a>
+              </div>
+            </div>
             <button
               type="button"
               data-testid="nav-mobile-toggle"
@@ -200,6 +289,15 @@ export default function Navigation() {
               data-testid="mobile-cta-whatsapp"
             >
               Order on WhatsApp
+            </a>
+            <a
+              href={SITE.swiggy}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-swiggy w-full justify-center"
+              data-testid="mobile-cta-swiggy"
+            >
+              Order on Swiggy
             </a>
             <a
               href={SITE.googleMaps}

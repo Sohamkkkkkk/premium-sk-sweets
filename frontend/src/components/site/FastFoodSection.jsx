@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Utensils } from "lucide-react";
 import { FAST_FOOD_MENU } from "@/data/products";
-import { PIMG, waLink } from "@/data/site";
+import { PIMG, SITE, waLink } from "@/data/site";
 
 export default function FastFoodSection() {
   return (
@@ -76,6 +76,15 @@ export default function FastFoodSection() {
                 data-testid="ff-cta-whatsapp"
               >
                 Order on WhatsApp
+              </a>
+              <a
+                href={SITE.swiggy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-swiggy"
+                data-testid="ff-cta-swiggy"
+              >
+                Order on Swiggy
               </a>
               <Link to="/fast-food" className="btn-secondary" data-testid="ff-view-menu">
                 View Full Menu

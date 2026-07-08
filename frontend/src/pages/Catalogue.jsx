@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { Search, ArrowUpRight, MessageCircle } from "lucide-react";
 import SiteLayout from "@/components/site/SiteLayout";
 import { CATEGORIES, PRODUCTS } from "@/data/products";
-import { waLink } from "@/data/site";
+import { SITE, waLink } from "@/data/site";
 
 export default function Catalogue() {
   const [params, setParams] = useSearchParams();
@@ -149,6 +149,16 @@ function ProductCard({ p }) {
             <MessageCircle className="h-4 w-4" strokeWidth={1.5} />
             Order on WhatsApp
           </span>
+          <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
+        </a>
+        <a
+          href={SITE.swiggy}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-flex items-center justify-between gap-2 rounded-full border border-swiggy/60 text-swiggy px-5 py-2 text-[13px] font-medium tracking-wide hover:bg-swiggy hover:text-white transition-colors"
+          data-testid={`product-order-${p.id}-swiggy`}
+        >
+          <span>Order on Swiggy</span>
           <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
         </a>
       </div>
