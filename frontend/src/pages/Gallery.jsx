@@ -62,6 +62,7 @@ export default function Gallery() {
         >
           <button
             type="button"
+            onClick={(e) => { e.stopPropagation(); setActive(null); }}
             className="absolute top-6 right-6 h-12 w-12 rounded-full bg-cream text-burgundy inline-flex items-center justify-center hover:scale-105 transition-transform"
             aria-label="Close"
             data-testid="gallery-lightbox-close"
@@ -71,6 +72,7 @@ export default function Gallery() {
           <img
             src={GALLERY[active].src}
             alt={GALLERY[active].alt}
+            onClick={(e) => e.stopPropagation()}
             className="max-h-full max-w-full rounded-[20px] object-contain shadow-premium-hover"
           />
         </div>
