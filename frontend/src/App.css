@@ -1,34 +1,43 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Component-scoped supplemental styles for SK Sweets */
+
+.hero-vignette {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 75%),
+    linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.35) 55%, rgba(28,26,26,0.55) 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.stagger > * { opacity: 0; transform: translateY(16px); animation: sk-fade-up 900ms cubic-bezier(0.22,1,0.36,1) forwards; }
+.stagger > *:nth-child(1) { animation-delay: 60ms; }
+.stagger > *:nth-child(2) { animation-delay: 160ms; }
+.stagger > *:nth-child(3) { animation-delay: 260ms; }
+.stagger > *:nth-child(4) { animation-delay: 360ms; }
+.stagger > *:nth-child(5) { animation-delay: 460ms; }
+.stagger > *:nth-child(6) { animation-delay: 560ms; }
+.stagger > *:nth-child(7) { animation-delay: 660ms; }
+.stagger > *:nth-child(8) { animation-delay: 760ms; }
+
+@keyframes sk-fade-up {
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.reveal-once {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 900ms cubic-bezier(0.22,1,0.36,1), transform 900ms cubic-bezier(0.22,1,0.36,1);
+}
+.reveal-once.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.App-link {
-    color: #61dafb;
+/* Decorative divider */
+.divider-emblem {
+  display: flex; align-items: center; gap: 14px;
 }
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.divider-emblem::before,
+.divider-emblem::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, rgba(197,160,40,0.6), transparent);
 }
