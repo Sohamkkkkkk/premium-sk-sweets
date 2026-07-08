@@ -48,51 +48,64 @@ export const IMG = {
   logoMark: "/assets/logo-mark-trans.png",
 };
 
-// PREMIUM PRODUCT PHOTOGRAPHY (Unsplash, verified) — used across every product-facing surface
-const un = (id, opts = "") =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1400&q=80${opts}`;
+// PREMIUM PRODUCT PHOTOGRAPHY — original AI-generated shots owned by SK Sweets,
+// saved locally to /assets/products/. Used across every product-facing surface.
+const p = (name) => `/assets/products/${name}.png`;
 
 export const PIMG = {
   // Signature specialties
-  kalakand: un("1610508500445-a4592435e27e"),         // laddu / mithai style
-  gulkandPeda: un("1517244683847-7456b63c5969"),      // rich rose-toned sweet
-  proteinLadoo: un("1521483451569-e33803c0330c"),     // granola / natural bowl
-  samosa: un("1601050690597-df0568f70950"),           // premium samosa plate
-  khakhra: un("1608198093002-ad4e005484ec"),          // assorted crisp breads
-  rasmalai: un("1631452180519-c014fe946bc7"),         // rich creamy dessert
-  kajuKatli: un("1610508500445-a4592435e27e"),        // silver-varq sweet
+  kalakand: p("kalakand"),
+  gulkandPeda: p("gulkand-peda"),
+  proteinLadoo: p("protein-ladoo"),
+  samosa: p("signature-samosa"),
+  khakhra: p("khakhra"),
+  rasmalai: p("rasmalai"),
+  kajuKatli: p("kaju-katli"),
 
-  // Category images
-  drySweet: un("1517093602195-b40af9688b46"),         // dry fruit board
-  milkSweet: un("1517244683847-7456b63c5969"),        // creamy dessert
-  desiSweet: un("1610508500445-a4592435e27e"),        // laddu spread
-  bengaliSweet: un("1631452180519-c014fe946bc7"),     // syrupy delicacy
-  cakes: un("1578985545062-69928b1d9587"),            // chocolate ganache cake
-  cakesAlt: un("1550617931-e17a7b70dce2"),            // chocolate cupcakes
-  cakesAlt2: un("1607478900766-efe13248b125"),        // colourful cupcakes
-  cakesAlt3: un("1571877227200-a0d98ea607e9"),        // tiramisu
-  cakesAlt4: un("1568051243851-f9b136146e97"),        // waffles with berries
-  cakesAlt5: un("1606313564200-e75d5e30476c"),        // chocolate cake close-up
-  fastFood: un("1567337710282-00832b415979"),         // indian thali
-  fastFoodAlt: un("1606491956689-2ea866880c84"),      // pav bhaji
-  fastFoodAlt2: un("1630383249896-424e482df921"),     // idli sambar
-  fastFoodAlt3: un("1512058564366-18510be2db19"),     // biryani
-  fastFoodAlt4: un("1596797038530-2c107229654b"),     // rich curry
-  sugarFree: un("1521483451569-e33803c0330c"),        // natural mix
-  importedCoffee: un("1495474472287-4d71bcdd2085"),   // latte art
-  importedChocolate: un("1481391319762-47dff72954d9"),// box of chocolates
-  importedChocolateAlt: un("1621939514649-280e2ee25f60"), // chocolate bars
-  importedBiscuits: un("1499636136210-6f4ee915583e"), // chocolate chip cookies
-  importedBiscuitsAlt: un("1558961363-fa8fdf82db35"), // chocolate cookies
-  macarons: un("1571506165871-ee72a35bc9d4"),         // macarons
-  dryFruits: un("1517093602195-b40af9688b46"),        // dry fruits board
-  beverages: un("1621263764928-df1444c5e859"),        // citrus drink
-  beveragesAlt: un("1553787499-6f9133860278"),        // milkshake
-  beveragesAlt2: un("1497534446932-c925b458314e"),    // strawberry mocktail
-  cinnamon: un("1509365465985-25d11c17e812"),         // pastry / roll
-  snackSpread: un("1517093602195-b40af9688b46"),      // savory spread
-  celebrationCake: un("1578985545062-69928b1d9587"),  // chocolate cake
-  brandStoryHero: un("1610508500445-a4592435e27e"),   // heritage mithai
+  // Categories
+  drySweet: p("kaju-katli"),
+  milkSweet: p("milk-peda"),
+  desiSweet: p("balusahi"),
+  bengaliSweet: p("kala-jamun"),
+  cakes: p("chocolate-cake"),
+  cakesAlt: p("butterscotch-cake"),
+  cakesAlt2: p("photo-cake"),
+  cakesAlt3: p("celebration-cake-hero"),
+  cakesAlt4: p("chocolate-cake"),
+  cakesAlt5: p("butterscotch-cake"),
+  fastFood: p("masala-dosa"),
+  fastFoodAlt: p("pav-bhaji"),
+  fastFoodAlt2: p("idli-sambar"),
+  fastFoodAlt3: p("sandwich"),
+  fastFoodAlt4: p("masala-dosa"),
+  sugarFree: p("sugar-free"),
+  importedCoffee: p("coffee"),
+  importedChocolate: p("imported-chocolate"),
+  importedChocolateAlt: p("imported-chocolate"),
+  importedBiscuits: p("imported-chocolate"),
+  importedBiscuitsAlt: p("imported-chocolate"),
+  macarons: p("macarons"),
+  dryFruits: p("dry-fruits"),
+  beverages: p("beverages"),
+  beveragesAlt: p("beverages"),
+  beveragesAlt2: p("beverages"),
+  cinnamon: p("khoya-barfi"),
+  snackSpread: p("namkeen"),
+  celebrationCake: p("celebration-cake-hero"),
+  brandStoryHero: p("brand-story"),
+  signatureHero: p("signature-hero"),
+  visitHero: p("visit-hero"),
+
+  // Extra individuals
+  khoyaBarfi: p("khoya-barfi"),
+  anjeerBarfi: p("anjeer-barfi"),
+  milkPeda: p("milk-peda"),
+  kalaJamun: p("kala-jamun"),
+  balusahi: p("balusahi"),
+  imarti: p("imarti"),
+  mysorePak: p("mysore-pak"),
+  photoCake: p("photo-cake"),
+  namkeen: p("namkeen"),
 };
 
 export const NAV = [

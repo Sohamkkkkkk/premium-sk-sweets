@@ -14,8 +14,8 @@ export default function VisitUs() {
           <div className="lg:col-span-6">
             <div className="img-zoom relative aspect-[4/5] rounded-[24px] overflow-hidden shadow-premium border border-copper/15 h-full min-h-[380px]">
               <img
-                src={PIMG.brandStoryHero}
-                alt="Traditional handcrafted Indian sweets — the SK Sweets promise"
+                src={PIMG.signatureHero}
+                alt="Curated selection of premium SK Sweets specialties on a burgundy velvet tray"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
