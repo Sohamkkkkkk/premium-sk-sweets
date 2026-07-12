@@ -1,0 +1,26 @@
+{
+  "summary": "Iteration 4 targeted-refinements verified via Playwright against the public preview URL. All 17 items in the review request pass: (a) 5 barfi/bite products (anjeer-barfi, pista-barfi, mewa-bite, fresh-litchi-bite, chocolate-mewa-bite) now render under filter-milk and are absent under filter-dry-fruit; searching 'anjeer' shows the card labelled MILK SWEETS. (b) Removed IDs (chakori, kalmi-bahur, veg-sandwich, cheese-sandwich, pav-bhaji, biryani, curry-thali) are gone from the DOM across all filters. (c) New Fast Food products (pani-puri, sev-puri, bhel-puri, chinese-paneer-patties, 4 frankies, manchurian-bhel) render with the correct /assets/products/<id>.png images and all 6 new image URLs return HTTP 200. (d) fast-food-section shows the six required groups (Dosas/Uttappas/South Indian/Chaat/Frankies/House Special); ff-group-sandwiches/snacks/cold-beverages are gone. (e) View Full Menu href='/catalogue?category=fast-food' — click navigates correctly and filter-fast-food chip is active (bg-burgundy). (f) /gallery: no gallery-filters container, zero gallery-filter-* buttons, 8 items present (gallery-item-0..7), every gallery img has inline style image-orientation:from-image, no button carries border-copper class, lightbox opens, next/prev/ArrowRight/ArrowLeft/ESC/backdrop all work. (g) filter-protein shows exactly the 3 expected products. (h) Home page loads, Order Now dropdown opens with WhatsApp/Swiggy/Call items, FloatingActions (whatsapp/swiggy/call) all present. (i) No console errors on Home, Catalogue or Gallery.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Home hero (regression observation, NOT introduced this iteration)", "issues": ["Hero background image on Home appears rotated ~90° because Hero.jsx also renders the store photo which has EXIF orientation. Since imageOrientation: from-image is not applied on Hero (only Gallery), this is unchanged behaviour from iteration 3, but flagging in case main agent wants to fix separately."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Minor: Fast Food group data-testid uses raw group.heading.toLowerCase() so testids contain spaces (e.g. 'ff-group-south indian', 'ff-group-house special'). Works but not URL/CSS-safe; recommend slugifying (e.g. 'ff-group-south-indian') for robust selectors. Current review request happens to accept these spaced ids so no test failure.",
+    "Minor: Catalogue useEffect that syncs URL has dependency array [active] but reads params/setParams — safe here because setParams is stable, but eslint-react-hooks/exhaustive-deps warning may appear. Not blocking.",
+    "Non-blocking: /assets/products/frankie.png is reused for all four frankie variants — expected per PIMG mapping but visually identical thumbnails. Confirm this is desired product-image behaviour."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (backend testing skipped per request)", "frontend": "100%"},
+  "test_credentials": "N/A",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Iteration 4 refinements are fully verified against public URL. Product data in /app/frontend/src/data/products.js, gallery in /app/frontend/src/data/gallery.js, Gallery page in /app/frontend/src/pages/Gallery.jsx, FastFoodSection in /app/frontend/src/components/site/FastFoodSection.jsx are all consistent with request. Note that ff-group-* testids contain spaces (e.g. 'ff-group-south indian') — future tests must not slugify unless the code is changed. Fast food frankie variants share the same frankie.png image by design.",
+  "rca of the issue": "No bugs — all iteration-4 acceptance criteria met."
+}

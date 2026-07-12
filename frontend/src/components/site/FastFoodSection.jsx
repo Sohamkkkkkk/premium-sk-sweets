@@ -86,7 +86,7 @@ export default function FastFoodSection() {
               >
                 Order on Swiggy
               </a>
-              <Link to="/fast-food" className="btn-secondary" data-testid="ff-view-menu">
+              <Link to="/catalogue?category=fast-food" className="btn-secondary" data-testid="ff-view-menu">
                 View Full Menu
                 <ArrowRight className="h-4 w-4" strokeWidth={1.5} />
               </Link>

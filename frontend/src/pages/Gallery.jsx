@@ -1,16 +1,11 @@
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight, Expand } from "lucide-react";
 import SiteLayout from "@/components/site/SiteLayout";
-import { GALLERY, GALLERY_CATEGORIES } from "@/data/gallery";
+import { GALLERY } from "@/data/gallery";
 
 export default function Gallery() {
-  const [active, setActive] = useState("all");
   const [lightbox, setLightbox] = useState(null); // index or null
-
-  const items = useMemo(
-    () => (active === "all" ? GALLERY : GALLERY.filter((g) => g.category === active)),
-    [active]
-  );
+  const items = GALLERY;
 
   const close = useCallback(() => setLightbox(null), []);
   const next = useCallback(
@@ -23,7 +18,6 @@ export default function Gallery() {
     [items.length]
   );
 
-  // Keyboard nav
   useEffect(() => {
     if (lightbox === null) return;
     const onKey = (e) => {
@@ -55,37 +49,11 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Category filters */}
-      <section className="bg-cream pt-8">
-        <div className="container-luxe">
-          <div
-            className="flex gap-2.5 overflow-x-auto no-scrollbar -mx-6 px-6"
-            data-testid="gallery-filters"
-          >
-            {GALLERY_CATEGORIES.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => setActive(c.id)}
-                data-testid={`gallery-filter-${c.id}`}
-                className={`shrink-0 inline-flex items-center rounded-full px-5 py-2.5 text-sm font-medium tracking-wide border transition-all duration-300 ${
-                  active === c.id
-                    ? "bg-burgundy text-cream border-burgundy shadow-premium"
-                    : "bg-white text-charcoal border-copper/20 hover:border-burgundy hover:text-burgundy"
-                }`}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Masonry grid via CSS columns */}
+      {/* Single masonry grid — no filters, preserves orientation */}
       <section className="bg-cream py-14 md:py-20">
         <div className="container-luxe">
           <div
-            className="columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-5 [column-fill:_balance]"
+            className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-5 [column-fill:_balance]"
             data-testid="gallery-grid"
           >
             {items.map((img, i) => (
@@ -94,24 +62,21 @@ export default function Gallery() {
                 type="button"
                 onClick={() => setLightbox(i)}
                 data-testid={`gallery-item-${i}`}
-                className="group relative mb-4 md:mb-5 block w-full break-inside-avoid overflow-hidden rounded-[18px] md:rounded-[22px] border border-copper/15 shadow-premium hover:shadow-premium-hover transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burgundy"
+                aria-label={`Enlarge ${img.label}`}
+                className="group relative mb-4 md:mb-5 block w-full break-inside-avoid overflow-hidden rounded-[18px] md:rounded-[22px] shadow-premium hover:shadow-premium-hover transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-burgundy"
               >
                 <div className="img-zoom">
                   <img
                     src={img.src}
                     alt={img.alt}
                     loading="lazy"
-                    className="w-full h-auto object-cover"
+                    style={{ imageOrientation: "from-image" }}
+                    className="block w-full h-auto"
                   />
                 </div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 p-4 md:p-5 flex items-end justify-between text-cream opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-[0.3em] text-gold-light">
-                      {GALLERY_CATEGORIES.find((g) => g.id === img.category)?.label}
-                    </div>
-                    <div className="font-serif text-lg md:text-xl mt-1">{img.label}</div>
-                  </div>
+                  <div className="font-serif text-lg md:text-xl">{img.label}</div>
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-cream text-burgundy">
                     <Expand className="h-4 w-4" strokeWidth={1.5} />
                   </span>
@@ -129,7 +94,6 @@ export default function Gallery() {
           onClick={close}
           data-testid="gallery-lightbox"
         >
-          {/* Close */}
           <button
             type="button"
             onClick={(e) => {
@@ -142,7 +106,6 @@ export default function Gallery() {
           >
             <X className="h-5 w-5" strokeWidth={1.75} />
           </button>
-          {/* Prev */}
           <button
             type="button"
             onClick={(e) => {
@@ -155,7 +118,6 @@ export default function Gallery() {
           >
             <ChevronLeft className="h-6 w-6" strokeWidth={1.75} />
           </button>
-          {/* Next */}
           <button
             type="button"
             onClick={(e) => {
@@ -176,13 +138,11 @@ export default function Gallery() {
             <img
               src={items[lightbox].src}
               alt={items[lightbox].alt}
+              style={{ imageOrientation: "from-image" }}
               className="max-h-[80vh] max-w-full rounded-[22px] object-contain shadow-premium-hover"
             />
             <div className="mt-5 text-center text-cream">
-              <div className="text-[10px] uppercase tracking-[0.3em] text-gold-light">
-                {GALLERY_CATEGORIES.find((g) => g.id === items[lightbox].category)?.label}
-              </div>
-              <div className="font-serif text-2xl mt-1">{items[lightbox].label}</div>
+              <div className="font-serif text-2xl">{items[lightbox].label}</div>
               <div className="text-[11px] text-cream/60 mt-2">
                 {lightbox + 1} / {items.length}
               </div>

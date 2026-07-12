@@ -135,8 +135,8 @@ export const PRODUCTS = [
   { id: "mava-barfi", name: "Mava Barfi", category: "milk", desc: "Fresh mava barfi, mildly sweet and delicate.", image: PIMG.khoyaBarfi },
   { id: "butterscotch-barfi", name: "Butterscotch Barfi", category: "milk", desc: "Silver-topped barfi with butterscotch depth.", image: PIMG.khoyaBarfi },
   { id: "mango-barfi", name: "Mango Barfi", category: "milk", desc: "Alphonso-forward barfi, seasonal favourite.", image: PIMG.khoyaBarfi },
-  { id: "anjeer-barfi", name: "Anjeer Barfi", category: "dry-fruit", desc: "Fig and dry fruit barfi — naturally sweetened.", image: PIMG.anjeerBarfi },
-  { id: "pista-barfi", name: "Pista Barfi", category: "dry-fruit", desc: "Rich green pista barfi with silver varq.", image: PIMG.khoyaBarfi },
+  { id: "anjeer-barfi", name: "Anjeer Barfi", category: "milk", desc: "Fig and dry fruit barfi — naturally sweetened.", image: PIMG.anjeerBarfi },
+  { id: "pista-barfi", name: "Pista Barfi", category: "milk", desc: "Rich green pista barfi with silver varq.", image: PIMG.khoyaBarfi },
   { id: "dubledaker-barfi", name: "Double-Decker Barfi", category: "milk", desc: "Two-layered barfi — the best of both worlds.", image: PIMG.khoyaBarfi },
 
   // --- Dry Fruit & Premium ---
@@ -146,16 +146,15 @@ export const PRODUCTS = [
   { id: "kaju-katli-kesar", name: "Kaju Katli — Kesar", category: "dry-fruit", desc: "Saffron-infused cashew diamond — festive luxury.", image: PIMG.kajuKatli },
   { id: "kaju-katli-strawberry", name: "Kaju Katli — Strawberry", category: "dry-fruit", desc: "Pink strawberry accent on classic cashew.", image: PIMG.kajuKatli },
   { id: "kaju-katli-jaggery", name: "Kaju Katli — Jaggery", category: "dry-fruit", desc: "Made with pure jaggery — refined-sugar-free.", image: PIMG.kajuKatli },
-  { id: "chocolate-mewa-bite", name: "Chocolate Mewa Bite", category: "dry-fruit", desc: "Mini chocolate-glazed dry-fruit bites.", image: PIMG.anjeerBarfi },
-  { id: "mewa-bite", name: "Mewa Bite", category: "dry-fruit", desc: "Chewy, nut-packed dry-fruit bites.", image: PIMG.anjeerBarfi },
-  { id: "fresh-litchi-bite", name: "Fresh Litchi Bite", category: "dry-fruit", desc: "Litchi-flavoured mewa bite — refreshingly floral.", image: PIMG.anjeerBarfi },
+  { id: "chocolate-mewa-bite", name: "Chocolate Mewa Bite", category: "milk", desc: "Mini chocolate-glazed dry-fruit bites.", image: PIMG.anjeerBarfi },
+  { id: "mewa-bite", name: "Mewa Bite", category: "milk", desc: "Chewy, nut-packed dry-fruit bites.", image: PIMG.anjeerBarfi },
+  { id: "fresh-litchi-bite", name: "Fresh Litchi Bite", category: "milk", desc: "Litchi-flavoured mewa bite — refreshingly floral.", image: PIMG.anjeerBarfi },
 
   // --- Bengali & Syrupy ---
   { id: "rasmalai", name: "Rasmalai", category: "bengali", desc: "Soft chenna discs in saffron creamy milk.", image: PIMG.rasmalai },
   { id: "rasgulla", name: "Rasgulla", category: "bengali", desc: "Spongy chenna balls in light sugar syrup.", image: PIMG.rasmalai },
   { id: "kala-jamun", name: "Kala Jamun", category: "bengali", desc: "Dark, deep-fried jamuns — soaked and syrupy.", image: PIMG.kalaJamun },
   { id: "lamba-jamun", name: "Lamba Jamun", category: "bengali", desc: "Elongated gulab jamuns, indulgently soft.", image: PIMG.kalaJamun },
-  { id: "kalmi-bahur", name: "SP Kalmi Bahur", category: "bengali", desc: "Bengali specialty — soft and syrup-drenched.", image: PIMG.kalaJamun },
   { id: "chum-chum", name: "Chum Chum", category: "bengali", desc: "Cylindrical chenna sweet, topped with khoya.", image: PIMG.rasmalai },
 
   // --- Desi Classics ---
@@ -165,7 +164,6 @@ export const PRODUCTS = [
   { id: "meth-ladu", name: "Methi Ladoo", category: "desi", desc: "Traditional winter warming ladoo.", image: PIMG.proteinLadoo },
   { id: "desi-ghee-halwa", name: "Desi Ghee Halwa", category: "desi", desc: "Pure ghee halwa — rustic and rich.", image: PIMG.mysorePak },
   { id: "imarti", name: "Imarti", category: "desi", desc: "Saffron urad dal flower — crisp and dripping with syrup.", image: PIMG.imarti },
-  { id: "chakori", name: "Sweet Chakori", category: "desi", desc: "Spiral crunchy sweet — an old-world favourite.", image: PIMG.imarti },
 
   // --- Signature ---
   { id: "protein-ladoo", name: "Dry Fruit Protein Ladoo", category: "signature", desc: "Wholesome dry-fruit ladoo, packed with natural protein.", image: PIMG.proteinLadoo },
@@ -179,17 +177,24 @@ export const PRODUCTS = [
   { id: "cake-theme", name: "Theme Cake", category: "cakes", desc: "Custom designed themed cakes — order in advance.", image: PIMG.celebrationCake },
   { id: "cake-anniversary", name: "Anniversary Cake", category: "cakes", desc: "Elegant tiered anniversary cakes.", image: PIMG.celebrationCake },
 
-  // --- Fast Food ---
+  // --- Fast Food (dine-in + take-away) ---
   { id: "masala-dosa", name: "Masala Dosa", category: "fast-food", desc: "Crisp golden dosa with spiced potato filling.", image: PIMG.fastFood },
   { id: "mysore-dosa", name: "Mysore Masala Dosa", category: "fast-food", desc: "Fiery red chutney inside a crisp dosa.", image: PIMG.fastFood },
   { id: "onion-uttappa", name: "Onion Uttappa", category: "fast-food", desc: "Thick soft pancake with fresh onion topping.", image: PIMG.fastFoodAlt2 },
-  { id: "veg-sandwich", name: "Veg Sandwich", category: "fast-food", desc: "Fresh grilled sandwich with house chutney.", image: PIMG.fastFoodAlt3 },
-  { id: "cheese-sandwich", name: "Cheese Grilled Sandwich", category: "fast-food", desc: "Molten cheese grilled between buttery bread.", image: PIMG.fastFoodAlt3 },
   { id: "idli", name: "Idli Sambar", category: "fast-food", desc: "Steamed idlis with fresh sambar and chutney.", image: PIMG.fastFoodAlt2 },
   { id: "vada", name: "Medu Vada", category: "fast-food", desc: "Crispy urad dal donut with coconut chutney.", image: PIMG.fastFoodAlt2 },
-  { id: "pav-bhaji", name: "Pav Bhaji", category: "fast-food", desc: "Spiced mashed veg curry with buttery pav.", image: PIMG.fastFoodAlt },
-  { id: "biryani", name: "Special Biryani", category: "fast-food", desc: "Fragrant long-grain biryani, house-spiced.", image: PIMG.fastFoodAlt },
-  { id: "curry-thali", name: "Curry Thali", category: "fast-food", desc: "Traditional thali with dal, curry, rice and roti.", image: PIMG.fastFoodAlt },
+  // Chaat
+  { id: "pani-puri", name: "Pani Puri", category: "fast-food", desc: "Crisp puris filled with tangy mint-flavoured pani.", image: PIMG.paniPuri },
+  { id: "sev-puri", name: "Sev Puri", category: "fast-food", desc: "Flat puris topped with onion, chutneys and sev.", image: PIMG.sevPuri },
+  { id: "bhel-puri", name: "Bhel Puri", category: "fast-food", desc: "Puffed rice tossed with chutneys, onion and sev.", image: PIMG.bhelPuri },
+  { id: "chinese-paneer-patties", name: "Chinese Paneer Patties", category: "fast-food", desc: "Golden pan-fried Chinese-style paneer patties.", image: PIMG.chinesePaneerPatties },
+  // Frankies
+  { id: "veg-cheese-mayo-frankie", name: "Veg Cheese Mayonnaise Frankie", category: "fast-food", desc: "Soft roti wrap with cheese, veg and creamy mayo.", image: PIMG.frankie },
+  { id: "noodles-mayo-frankie", name: "Noodles Mayonnaise Frankie", category: "fast-food", desc: "Warm noodles rolled into a soft frankie with mayo.", image: PIMG.frankie },
+  { id: "veg-manchurian-cheese-frankie", name: "Veg Manchurian Cheese Mayo Frankie", category: "fast-food", desc: "Manchurian balls, cheese and mayo in a soft frankie.", image: PIMG.frankie },
+  { id: "veg-cheese-paneer-frankie", name: "Veg Cheese Paneer Mayo Frankie", category: "fast-food", desc: "Paneer, cheese and veg wrapped with creamy mayo.", image: PIMG.frankie },
+  // House Special
+  { id: "manchurian-bhel", name: "Manchurian Bhel", category: "fast-food", desc: "Our house-special Indo-Chinese Manchurian bhel.", image: PIMG.manchurianBhel },
 
   // --- Khakhra & Snacks ---
   { id: "khakhra-plain", name: "Plain Khakhra", category: "khakhra", desc: "Roasted whole-wheat crisps — perfect with chai.", image: PIMG.khakhra },
@@ -272,33 +277,27 @@ export const FAST_FOOD_MENU = [
     ],
   },
   {
-    heading: "Sandwiches",
+    heading: "Chaat",
     items: [
-      "Veg Sandwich",
-      "Cheese Sandwich",
-      "Cheese Grilled Sandwich",
-      "Paneer Grilled Sandwich",
-      "Chocolate Sandwich",
+      "Pani Puri",
+      "Sev Puri",
+      "Bhel Puri",
+      "Chinese Paneer Patties",
     ],
   },
   {
-    heading: "Snacks",
+    heading: "Frankies",
     items: [
-      "Signature Samosa",
-      "Kachori",
-      "Aloo Tikki",
-      "Pav Bhaji",
-      "Vada Pav",
+      "Veg Cheese Mayonnaise Frankie",
+      "Noodles Mayonnaise Frankie",
+      "Veg Manchurian Cheese Mayo Frankie",
+      "Veg Cheese Paneer Mayo Frankie",
     ],
   },
   {
-    heading: "Cold Beverages",
+    heading: "House Special",
     items: [
-      "Fresh Fruit Juice",
-      "Cold Coffee",
-      "Mango Lassi",
-      "Sweet Lassi",
-      "Masala Chaas",
+      "Manchurian Bhel",
     ],
   },
 ];

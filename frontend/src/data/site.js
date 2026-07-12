@@ -106,6 +106,14 @@ export const PIMG = {
   mysorePak: p("mysore-pak"),
   photoCake: p("photo-cake"),
   namkeen: p("namkeen"),
+
+  // Fast food v2
+  paniPuri: p("pani-puri"),
+  sevPuri: p("sev-puri"),
+  bhelPuri: p("bhel-puri"),
+  chinesePaneerPatties: p("chinese-paneer-patties"),
+  frankie: p("frankie"),
+  manchurianBhel: p("manchurian-bhel"),
 };
 
 export const NAV = [
