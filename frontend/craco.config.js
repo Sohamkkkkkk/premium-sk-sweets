@@ -85,6 +85,14 @@ let webpackConfig = {
     },
     configure: (webpackConfig) => {
 
+      // Remove ESLintWebpackPlugin to avoid winston/defaultMeta incompatibility
+      // on npm-based installs. Lint is still available via `npm run lint`.
+      if (webpackConfig.plugins) {
+        webpackConfig.plugins = webpackConfig.plugins.filter(
+          (p) => p && p.constructor && p.constructor.name !== "ESLintWebpackPlugin"
+        );
+      }
+
       // Add ignored patterns to reduce watched directories
         webpackConfig.watchOptions = {
           ...webpackConfig.watchOptions,
