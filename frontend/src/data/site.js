@@ -26,7 +26,7 @@ export const waLink = (message = "Hello SK Sweets, I would like to place an orde
   `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
 
 export const telLink = () => `tel:${SITE.phone}`;
-
+  
 // REAL STORE PHOTOGRAPHS — used ONLY inside the Gallery page.
 // Never used in product cards, hero cards or category tiles.
 export const STORE_PHOTOS = {
@@ -36,16 +36,21 @@ export const STORE_PHOTOS = {
   bengaliCounter: "https://customer-assets.emergentagent.com/job_premium-sweets-dev/artifacts/j9xhqd9e_20260701_120502.webp",
   cakesRasmalai: "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/1414zhp7_20260701_120447.webp",
   desiCounter: "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/whiceybs_20260701_120613.webp",
-  imported: "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/cjv3uigi_20260701_121811.webp",
-  beverages: "https://customer-assets.emergentagent.com/job_6734cf93-f9fe-4f7b-b786-1ef419933704/artifacts/tz1wip6h_20260701_120425.webp",
+  
+  store: "/assets/gallery/store.jpg",
 };
 
 // The one interior photograph allowed as the Hero background
-export const HERO_IMAGE = STORE_PHOTOS.interior;
+export const HERO_IMAGE = STORE_PHOTOS.store;
 
 export const IMG = {
   logoFull: "/assets/logo.png",
   logoMark: "/assets/logo-mark-trans.png",
+
+  // Category card images
+  
+  imported: "/assets/gallery/store.jpg", // change later if you have another imported image
+  beverages: "/assets/gallery/beverages.jpg",
 };
 
 // PREMIUM PRODUCT PHOTOGRAPHY — original AI-generated shots owned by SK Sweets,
@@ -79,16 +84,9 @@ export const PIMG = {
   fastFoodAlt3: p("sandwich"),
   fastFoodAlt4: p("masala-dosa"),
   sugarFree: p("sugar-free"),
-  importedCoffee: p("coffee"),
-  importedChocolate: p("imported-chocolate"),
-  importedChocolateAlt: p("imported-chocolate"),
-  importedBiscuits: p("imported-chocolate"),
-  importedBiscuitsAlt: p("imported-chocolate"),
-  macarons: p("macarons"),
+
   dryFruits: p("dry-fruits"),
-  beverages: p("beverages"),
-  beveragesAlt: p("beverages"),
-  beveragesAlt2: p("beverages"),
+  
   cinnamon: p("khoya-barfi"),
   snackSpread: p("namkeen"),
   celebrationCake: p("celebration-cake-hero"),
@@ -97,10 +95,69 @@ export const PIMG = {
   visitHero: p("visit-hero"),
 
   // Extra individuals
-  khoyaBarfi: p("khoya-barfi"),
-  anjeerBarfi: p("anjeer-barfi"),
-  milkPeda: p("milk-peda"),
-  kalaJamun: p("kala-jamun"),
+ // Extra individuals
+khoyaBarfi: p("khoya-barfi"),
+anjeerBarfi: p("anjeer-barfi"),
+
+milkPeda: p("milk-peda"),
+malaiPeda: "/assets/products/malai-peda.jpg",
+kandiPeda: "/assets/products/kandi-peda.jpg",
+kachiPeda: "/assets/products/kachi-peda.jpg",
+sahiKesarPeda: "/assets/products/sahi-kesar-peda.jpg",
+mathuraPeda: "/assets/products/mathura-peda.jpg",
+kesarPuri: "/assets/products/kesar-puri.jpg",
+malaiPuri: "/assets/products/malai-puri.jpg",
+
+motherIndiaPeda: "/assets/products/mother-india-peda.jpg",
+milkCake: "/assets/products/milk-cake.jpg",
+mavaBarfi: "/assets/products/mava-barfi.jpg",
+buttercotchBarfi: "/assets/products/buttercotch-barfi.jpg",
+mangoBarfi: "/assets/products/mango-barfi.jpg",
+pistaBarfi: "/assets/products/pista-barfi.jpg",
+doubleDeckerBarfi: "/assets/products/double-decker-barfi.jpg",
+
+chocolateMewaBite: "/assets/products/chocolate-mewa-bite.jpg",
+mewaBite: "/assets/products/mewa-bite.jpg",
+freshLitchiBite: "/assets/products/fresh-litchi-bite.jpg",
+
+kajuKatliClassic: "/assets/products/kaju-katli-classic.jpg",
+kajuKatliPista: "/assets/products/kaju-katli-pista.jpg",
+kajuKatliMango: "/assets/products/kaju-katli-mango.jpg",
+kajuKatliKesar: "/assets/products/kaju-katli-kesar.jpg",
+kajuKatliStrawberry: "/assets/products/kaju-katli-strawberry.jpg",
+kajuKatliJaggery: "/assets/products/kaju-katli-jaggery.jpg",
+
+rasgulla: "/assets/products/rasgulla.jpg",
+lambaJamun: "/assets/products/lamba-jamun.jpg",
+chumChum: "/assets/products/chum-chum.jpg",
+
+malaiMysore: "/assets/products/malai-mysore.jpg",
+desiGheeHalwa: "/assets/products/desi-ghee-halwa.jpg",
+
+anniversaryCake: "/assets/products/anniversary-cake.jpg",
+pineappleCake: "/assets/products/pineapple-cake.jpg",
+
+mysoreMasalaDosa: "/assets/products/mysore-masala-dosa.jpg",
+onionUttappa: "/assets/products/onion-uttappa.jpg",
+meduVada: "/assets/products/medu-vada.jpg",
+
+noodlesMayonnaiseFrankie: "/assets/products/noodles-mayonnaise-frankie.jpg",
+manchurianCheeseMayonnaiseFrankie: "/assets/products/manchurian-cheese-mayonnaise-frankie.jpg",
+cheesePaneerMayoFrankie: "/assets/products/cheese-paneer-mayo-frankie.jpg",
+
+methiKhakhra: "/assets/products/methi-khakra.jpg",
+paniPuriKhakra: "/assets/products/pani-puri-khakra.jpg",
+masalaKhakhra: "/assets/products/masala-khakra.jpg",
+
+chakli: "/assets/products/chakli.jpg",
+namkeenMix: "/assets/products/namkeen-mix.jpg",
+chivda: "/assets/products/chivda.jpg",
+
+proteinBar: "/assets/products/protein-bar.jpg",
+peanutButter: "/assets/products/peanut-butter.jpg",
+premiumGranolaMix: "/assets/products/premium-granola-mix.jpg",
+
+kalaJamun: p("kala-jamun"),
   balusahi: p("balusahi"),
   imarti: p("imarti"),
   mysorePak: p("mysore-pak"),

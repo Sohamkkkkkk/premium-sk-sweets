@@ -1,31 +1,31 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { IMG } from "@/data/site";
+import { IMG, PIMG } from "@/data/site";
 
 const FEATURED = [
   {
     id: "signature",
     label: "Signature Specialties",
     tagline: "House Creations",
-    image: IMG.sweetCounter,
+    image: PIMG.signatureHero,
   },
   {
     id: "bengali",
     label: "Bengali Sweets",
     tagline: "Rasmalai · Kala Jamun",
-    image: IMG.bengaliCounter,
+    image: PIMG.rasmalai,
   },
   {
     id: "cakes",
     label: "Premium Cakes",
     tagline: "Photo · Theme · Wedding",
-    image: IMG.cakesRasmalai,
+    image: PIMG.photoCake,
   },
   {
     id: "desi",
     label: "Desi & Traditional",
     tagline: "Balusahi · Imarti · Mysore Pak",
-    image: IMG.desiCounter,
+    image: PIMG.balusahi,
   },
   {
     id: "imported-chocolate",

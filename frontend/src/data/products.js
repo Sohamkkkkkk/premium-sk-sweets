@@ -14,11 +14,12 @@ export const CATEGORIES = [
   { id: "khakhra", label: "Khakhra" },
   { id: "snacks", label: "Snacks" },
   { id: "protein", label: "Protein Corner" },
+  { id: "sugar-free", label: "Sugar Free" },
   { id: "imported-coffee", label: "Imported Coffee" },
   { id: "imported-chocolate", label: "Imported Chocolates" },
   { id: "dry-fruits", label: "Dry Fruits" },
   { id: "beverages", label: "Beverages" },
-  { id: "sugar-free", label: "Sugar Free" },
+  
 ];
 
 export const SIGNATURES = [
@@ -95,8 +96,7 @@ export const CUSTOMER_FAVOURITES = [
   { id: "cakes", label: "Premium Cakes", copy: "Photo, theme and celebration cakes crafted to order.", image: PIMG.cakes },
   { id: "fast-food", label: "Fast Food", copy: "Dosas, uttappa, sandwiches and hot South Indian favourites.", image: PIMG.fastFood },
   { id: "sugar-free", label: "Sugar-Free Sweets", copy: "Guilt-free indulgence, without compromising taste.", image: PIMG.sugarFree },
-  { id: "imported-coffee", label: "Imported Coffee", copy: "Curated coffee sachets & premium brewing choices.", image: PIMG.importedCoffee },
-  { id: "imported-chocolate", label: "Imported Chocolates", copy: "Global favourites — Ferrero, Lindt, Kinder and more.", image: PIMG.importedChocolate },
+  
   { id: "dry-fruits", label: "Dry Fruits", copy: "Handpicked cashews, almonds, pistachios and figs.", image: PIMG.dryFruits },
 ];
 
@@ -112,57 +112,54 @@ const cimg = {
   khakhra: PIMG.khakhra,
   snacks: PIMG.snackSpread,
   protein: PIMG.proteinLadoo,
-  "imported-coffee": PIMG.importedCoffee,
-  "imported-chocolate": PIMG.importedChocolate,
-  "dry-fruits": PIMG.dryFruits,
-  beverages: PIMG.beverages,
+ 
   "sugar-free": PIMG.sugarFree,
 };
 
 export const PRODUCTS = [
   // --- Milk Sweets / Pedas & Barfis ---
-  { id: "malai-peda", name: "Malai Peda", category: "milk", desc: "Soft, creamy milk peda — rich and delicate.", image: PIMG.milkPeda },
-  { id: "kandi-peda", name: "Kandi Peda", category: "milk", desc: "Traditional caramelised khoya peda.", image: PIMG.milkPeda },
-  { id: "kachi-peda", name: "Kachi Peda", category: "milk", desc: "Fresh, unroasted khoya peda — pure milk flavour.", image: PIMG.milkPeda },
-  { id: "sahi-kesar-peda", name: "Sahi Kesar Peda", category: "milk", desc: "Kesar-infused royal peda, subtly aromatic.", image: PIMG.milkPeda },
-  { id: "mathura-peda", name: "Mathura Peda", category: "milk", desc: "Deep-brown Mathura style — classic and nostalgic.", image: PIMG.milkPeda },
+  { id: "malai-peda", name: "Malai Peda", category: "milk", desc: "Soft, creamy milk peda — rich and delicate.", image: PIMG.malaiPeda },
+  { id: "kandi-peda", name: "Kandi Peda", category: "milk", desc: "Traditional caramelised khoya peda.", image: PIMG.kandiPeda },
+  { id: "kachi-peda", name: "Kachi Peda", category: "milk", desc: "Fresh, unroasted khoya peda — pure milk flavour.", image: PIMG.kachiPeda },
+  { id: "sahi-kesar-peda", name: "Sahi Kesar Peda", category: "milk", desc: "Kesar-infused royal peda, subtly aromatic.", image: PIMG.sahiKesarPeda },
+ { id: "mathura-peda", name: "Mathura Peda", category: "milk", desc: "Deep-brown Mathura style — classic and nostalgic.", image: PIMG.mathuraPeda },
   { id: "gulkand-peda", name: "Gulkand Peda", category: "signature", desc: "House signature peda filled with rose petal preserve.", image: PIMG.gulkandPeda },
-  { id: "kesar-puri", name: "Kesar Puri", category: "milk", desc: "Saffron milk barfi topped with pistachio slivers.", image: PIMG.khoyaBarfi },
-  { id: "malai-puri", name: "Malai Puri", category: "milk", desc: "Delicate malai barfi with silver varq.", image: PIMG.khoyaBarfi },
-  { id: "mother-india-peda", name: "Mother India Peda", category: "milk", desc: "Rich khoya peda with a tri-colour flourish.", image: PIMG.milkPeda },
-  { id: "milk-cake", name: "Milk Cake", category: "milk", desc: "Slow-cooked khoya cake with a caramel core.", image: PIMG.khoyaBarfi },
+  { id: "kesar-puri", name: "Kesar Puri", category: "milk", desc: "Saffron milk barfi topped with pistachio slivers.", image: PIMG.kesarPuri },
+  { id: "malai-puri", name: "Malai Puri", category: "milk", desc: "Delicate malai barfi with silver varq.", image: PIMG.malaiPuri },
+  { id: "mother-india-peda", name: "Mother India Peda", category: "milk", desc: "Rich khoya peda with a tri-colour flourish.", image: PIMG.motherIndiaPeda },
+  { id: "milk-cake", name: "Milk Cake", category: "milk", desc: "Slow-cooked khoya cake with a caramel core.", image: PIMG.milkCake },
   { id: "kalakand", name: "Kalakand", category: "signature", desc: "House specialty — soft granular milk cake.", image: PIMG.kalakand },
-  { id: "mava-barfi", name: "Mava Barfi", category: "milk", desc: "Fresh mava barfi, mildly sweet and delicate.", image: PIMG.khoyaBarfi },
-  { id: "butterscotch-barfi", name: "Butterscotch Barfi", category: "milk", desc: "Silver-topped barfi with butterscotch depth.", image: PIMG.khoyaBarfi },
-  { id: "mango-barfi", name: "Mango Barfi", category: "milk", desc: "Alphonso-forward barfi, seasonal favourite.", image: PIMG.khoyaBarfi },
+  { id: "mava-barfi", name: "Mava Barfi", category: "milk", desc: "Fresh mava barfi, mildly sweet and delicate.", image: PIMG.mavaBarfi },
+  { id: "butterscotch-barfi", name: "Butterscotch Barfi", category: "milk", desc: "Silver-topped barfi with butterscotch depth.", image: PIMG.buttercotchBarfi },
+  { id: "mango-barfi", name: "Mango Barfi", category: "milk", desc: "Alphonso-forward barfi, seasonal favourite.", image: PIMG.mangoBarfi },
   { id: "anjeer-barfi", name: "Anjeer Barfi", category: "milk", desc: "Fig and dry fruit barfi — naturally sweetened.", image: PIMG.anjeerBarfi },
-  { id: "pista-barfi", name: "Pista Barfi", category: "milk", desc: "Rich green pista barfi with silver varq.", image: PIMG.khoyaBarfi },
-  { id: "dubledaker-barfi", name: "Double-Decker Barfi", category: "milk", desc: "Two-layered barfi — the best of both worlds.", image: PIMG.khoyaBarfi },
+  { id: "pista-barfi", name: "Pista Barfi", category: "milk", desc: "Rich green pista barfi with silver varq.", image: PIMG.pistaBarfi },
+  { id: "duble-decker-barfi", name: "Double-Decker Barfi", category: "milk", desc: "Two-layered barfi — the best of both worlds.", image: PIMG.doubleDeckerBarfi },
 
   // --- Dry Fruit & Premium ---
-  { id: "kaju-katli-classic", name: "Kaju Katli (Classic)", category: "dry-fruit", desc: "Silver-leaf cashew diamonds — the classic gift.", image: PIMG.kajuKatli },
-  { id: "kaju-katli-pista", name: "Kaju Katli — Pista", category: "dry-fruit", desc: "Pista-layered cashew diamond, refreshingly rich.", image: PIMG.kajuKatli },
-  { id: "kaju-katli-mango", name: "Kaju Katli — Mango", category: "dry-fruit", desc: "Alphonso-hued cashew fudge — vibrant and rare.", image: PIMG.kajuKatli },
-  { id: "kaju-katli-kesar", name: "Kaju Katli — Kesar", category: "dry-fruit", desc: "Saffron-infused cashew diamond — festive luxury.", image: PIMG.kajuKatli },
-  { id: "kaju-katli-strawberry", name: "Kaju Katli — Strawberry", category: "dry-fruit", desc: "Pink strawberry accent on classic cashew.", image: PIMG.kajuKatli },
-  { id: "kaju-katli-jaggery", name: "Kaju Katli — Jaggery", category: "dry-fruit", desc: "Made with pure jaggery — refined-sugar-free.", image: PIMG.kajuKatli },
-  { id: "chocolate-mewa-bite", name: "Chocolate Mewa Bite", category: "milk", desc: "Mini chocolate-glazed dry-fruit bites.", image: PIMG.anjeerBarfi },
-  { id: "mewa-bite", name: "Mewa Bite", category: "milk", desc: "Chewy, nut-packed dry-fruit bites.", image: PIMG.anjeerBarfi },
-  { id: "fresh-litchi-bite", name: "Fresh Litchi Bite", category: "milk", desc: "Litchi-flavoured mewa bite — refreshingly floral.", image: PIMG.anjeerBarfi },
+  { id: "kaju-katli-classic", name: "Kaju Katli (Classic)", category: "dry-fruit", desc: "Silver-leaf cashew diamonds — the classic gift.", image: PIMG.kajuKatliClassic },
+  { id: "kaju-katli-pista", name: "Kaju Katli — Pista", category: "dry-fruit", desc: "Pista-layered cashew diamond, refreshingly rich.", image: PIMG.kajuKatliPista },
+  { id: "kaju-katli-mango", name: "Kaju Katli — Mango", category: "dry-fruit", desc: "Alphonso-hued cashew fudge — vibrant and rare.", image: PIMG.kajuKatliMango },
+  { id: "kaju-katli-kesar", name: "Kaju Katli — Kesar", category: "dry-fruit", desc: "Saffron-infused cashew diamond — festive luxury.", image: PIMG.kajuKatliKesar },
+  { id: "kaju-katli-strawberry", name: "Kaju Katli — Strawberry", category: "dry-fruit", desc: "Pink strawberry accent on classic cashew.", image: PIMG.kajuKatliStrawberry },
+  { id: "kaju-katli-jaggery", name: "Kaju Katli — Jaggery", category: "dry-fruit", desc: "Made with pure jaggery — refined-sugar-free.", image: PIMG.kajuKatliJaggery },
+  { id: "chocolate-mewa-bite", name: "Chocolate Mewa Bite", category: "milk", desc: "Mini chocolate-glazed dry-fruit bites.", image: PIMG.chocolateMewaBite },
+  { id: "mewa-bite", name: "Mewa Bite", category: "milk", desc: "Chewy, nut-packed dry-fruit bites.", image: PIMG.mewaBite },
+  { id: "fresh-litchi-bite", name: "Fresh Litchi Bite", category: "milk", desc: "Litchi-flavoured mewa bite — refreshingly floral.", image: PIMG.freshLitchiBite },
 
   // --- Bengali & Syrupy ---
   { id: "rasmalai", name: "Rasmalai", category: "bengali", desc: "Soft chenna discs in saffron creamy milk.", image: PIMG.rasmalai },
-  { id: "rasgulla", name: "Rasgulla", category: "bengali", desc: "Spongy chenna balls in light sugar syrup.", image: PIMG.rasmalai },
+  { id: "rasgulla", name: "Rasgulla", category: "bengali", desc: "Spongy chenna balls in light sugar syrup.", image: PIMG.rasgulla },
   { id: "kala-jamun", name: "Kala Jamun", category: "bengali", desc: "Dark, deep-fried jamuns — soaked and syrupy.", image: PIMG.kalaJamun },
-  { id: "lamba-jamun", name: "Lamba Jamun", category: "bengali", desc: "Elongated gulab jamuns, indulgently soft.", image: PIMG.kalaJamun },
-  { id: "chum-chum", name: "Chum Chum", category: "bengali", desc: "Cylindrical chenna sweet, topped with khoya.", image: PIMG.rasmalai },
+  { id: "lamba-jamun", name: "Lamba Jamun", category: "bengali", desc: "Elongated gulab jamuns, indulgently soft.", image: PIMG.lambaJamun },
+  { id: "chum-chum", name: "Chum Chum", category: "bengali", desc: "Cylindrical chenna sweet, topped with khoya.", image: PIMG.chumChum },
 
   // --- Desi Classics ---
   { id: "balusahi", name: "Balusahi", category: "desi", desc: "Flaky, syrup-glazed North Indian donut.", image: PIMG.balusahi },
-  { id: "malai-maysor", name: "Malai Maysor", category: "desi", desc: "Malai-topped Mysore pak variation.", image: PIMG.mysorePak },
-  { id: "maysoor-pak", name: "Mysore Pak", category: "desi", desc: "Ghee-rich South Indian classic — melts on tongue.", image: PIMG.mysorePak },
-  { id: "meth-ladu", name: "Methi Ladoo", category: "desi", desc: "Traditional winter warming ladoo.", image: PIMG.proteinLadoo },
-  { id: "desi-ghee-halwa", name: "Desi Ghee Halwa", category: "desi", desc: "Pure ghee halwa — rustic and rich.", image: PIMG.mysorePak },
+  { id: "malai-mysore", name: "Malai Maysore", category: "desi", desc: "Malai-topped Mysore pak variation.", image: PIMG.malaiMysore },
+  { id: "mysore-pak", name: "Mysore Pak", category: "desi", desc: "Ghee-rich South Indian classic — melts on tongue.", image: PIMG.mysorePak },
+  { id: "meth-ladoo", name: "Methi Ladoo", category: "desi", desc: "Traditional winter warming ladoo.", image: PIMG.proteinLadoo },
+  { id: "desi-ghee-halwa", name: "Desi Ghee Halwa", category: "desi", desc: "Pure ghee halwa — rustic and rich.", image: PIMG.desiGheeHalwa },
   { id: "imarti", name: "Imarti", category: "desi", desc: "Saffron urad dal flower — crisp and dripping with syrup.", image: PIMG.imarti },
 
   // --- Signature ---
@@ -170,19 +167,19 @@ export const PRODUCTS = [
   { id: "signature-samosa", name: "Signature Samosa", category: "signature", desc: "Our in-house masala recipe — irresistibly flavourful.", image: PIMG.samosa },
 
   // --- Cakes ---
-  { id: "cake-pineapple", name: "Pineapple Cream Cake", category: "cakes", desc: "Classic fresh pineapple layered cake.", image: PIMG.photoCake },
+  { id: "cake-pineapple", name: "Pineapple Cream Cake", category: "cakes", desc: "Classic fresh pineapple layered cake.", image: PIMG.pineappleCake },
   { id: "cake-chocolate", name: "Chocolate Truffle Cake", category: "cakes", desc: "Rich chocolate truffle with dark ganache.", image: PIMG.cakes },
   { id: "cake-butterscotch", name: "Butterscotch Crunch Cake", category: "cakes", desc: "Butterscotch cream with praline crunch.", image: PIMG.cakesAlt },
   { id: "cake-photo", name: "Photo Cake", category: "cakes", desc: "Personalised edible photo cake for celebrations.", image: PIMG.photoCake },
   { id: "cake-theme", name: "Theme Cake", category: "cakes", desc: "Custom designed themed cakes — order in advance.", image: PIMG.celebrationCake },
-  { id: "cake-anniversary", name: "Anniversary Cake", category: "cakes", desc: "Elegant tiered anniversary cakes.", image: PIMG.celebrationCake },
+  { id: "cake-anniversary", name: "Anniversary Cake", category: "cakes", desc: "Elegant tiered anniversary cakes.", image: PIMG.anniversaryCake },
 
   // --- Fast Food (dine-in + take-away) ---
   { id: "masala-dosa", name: "Masala Dosa", category: "fast-food", desc: "Crisp golden dosa with spiced potato filling.", image: PIMG.fastFood },
-  { id: "mysore-dosa", name: "Mysore Masala Dosa", category: "fast-food", desc: "Fiery red chutney inside a crisp dosa.", image: PIMG.fastFood },
-  { id: "onion-uttappa", name: "Onion Uttappa", category: "fast-food", desc: "Thick soft pancake with fresh onion topping.", image: PIMG.fastFoodAlt2 },
+  { id: "mysore-dosa", name: "Mysore Masala Dosa", category: "fast-food", desc: "Fiery red chutney inside a crisp dosa.", image: PIMG.mysoreMasalaDosa },
+  { id: "onion-uttappa", name: "Onion Uttappa", category: "fast-food", desc: "Thick soft pancake with fresh onion topping.", image: PIMG.onionUttappa },
   { id: "idli", name: "Idli Sambar", category: "fast-food", desc: "Steamed idlis with fresh sambar and chutney.", image: PIMG.fastFoodAlt2 },
-  { id: "vada", name: "Medu Vada", category: "fast-food", desc: "Crispy urad dal donut with coconut chutney.", image: PIMG.fastFoodAlt2 },
+  { id: "vada", name: "Medu Vada", category: "fast-food", desc: "Crispy urad dal donut with coconut chutney.", image: PIMG.meduVada },
   // Chaat
   { id: "pani-puri", name: "Pani Puri", category: "fast-food", desc: "Crisp puris filled with tangy mint-flavoured pani.", image: PIMG.paniPuri },
   { id: "sev-puri", name: "Sev Puri", category: "fast-food", desc: "Flat puris topped with onion, chutneys and sev.", image: PIMG.sevPuri },
@@ -190,54 +187,36 @@ export const PRODUCTS = [
   { id: "chinese-paneer-patties", name: "Chinese Paneer Patties", category: "fast-food", desc: "Golden pan-fried Chinese-style paneer patties.", image: PIMG.chinesePaneerPatties },
   // Frankies
   { id: "veg-cheese-mayo-frankie", name: "Veg Cheese Mayonnaise Frankie", category: "fast-food", desc: "Soft roti wrap with cheese, veg and creamy mayo.", image: PIMG.frankie },
-  { id: "noodles-mayo-frankie", name: "Noodles Mayonnaise Frankie", category: "fast-food", desc: "Warm noodles rolled into a soft frankie with mayo.", image: PIMG.frankie },
-  { id: "veg-manchurian-cheese-frankie", name: "Veg Manchurian Cheese Mayo Frankie", category: "fast-food", desc: "Manchurian balls, cheese and mayo in a soft frankie.", image: PIMG.frankie },
-  { id: "veg-cheese-paneer-frankie", name: "Veg Cheese Paneer Mayo Frankie", category: "fast-food", desc: "Paneer, cheese and veg wrapped with creamy mayo.", image: PIMG.frankie },
+  { id: "noodles-mayo-frankie", name: "Noodles Mayonnaise Frankie", category: "fast-food", desc: "Warm noodles rolled into a soft frankie with mayo.", image: PIMG.noodlesMayonnaiseFrankie },
+  { id: "veg-manchurian-cheese-frankie", name: "Veg Manchurian Cheese Mayo Frankie", category: "fast-food", desc: "Manchurian balls, cheese and mayo in a soft frankie.", image: PIMG.manchurianCheeseMayonnaiseFrankie },
+  { id: "veg-cheese-paneer-frankie", name: "Veg Cheese Paneer Mayo Frankie", category: "fast-food", desc: "Paneer, cheese and veg wrapped with creamy mayo.", image: PIMG.cheesePaneerMayoFrankie},
   // House Special
   { id: "manchurian-bhel", name: "Manchurian Bhel", category: "fast-food", desc: "Our house-special Indo-Chinese Manchurian bhel.", image: PIMG.manchurianBhel },
 
   // --- Khakhra & Snacks ---
   { id: "khakhra-plain", name: "Plain Khakhra", category: "khakhra", desc: "Roasted whole-wheat crisps — perfect with chai.", image: PIMG.khakhra },
-  { id: "khakhra-methi", name: "Methi Khakhra", category: "khakhra", desc: "Fenugreek-spiced khakhra, aromatic and light.", image: PIMG.khakhra },
-  { id: "khakhra-masala", name: "Masala Khakhra", category: "khakhra", desc: "Spiced khakhra — a bold everyday snack.", image: PIMG.khakhra },
-  { id: "pani-puri-khakhra", name: "Pani Puri Khakhra", category: "khakhra", desc: "Tangy pani-puri flavoured khakhra.", image: PIMG.khakhra },
-  { id: "chakli", name: "Chakli", category: "snacks", desc: "Crisp spiralled savoury snack — Diwali favourite.", image: PIMG.namkeen },
+  { id: "khakhra-methi", name: "Methi Khakhra", category: "khakhra", desc: "Fenugreek-spiced khakhra, aromatic and light.", image: PIMG.methiKhakhra },
+  { id: "khakhra-masala", name: "Masala Khakhra", category: "khakhra", desc: "Spiced khakhra — a bold everyday snack.", image: PIMG.masalaKhakhra },
+  { id: "pani-puri-khakhra", name: "Pani Puri Khakhra", category: "khakhra", desc: "Tangy pani-puri flavoured khakhra.", image: PIMG.paniPuriKhakra },
+  { id: "chakli", name: "Chakli", category: "snacks", desc: "Crisp spiralled savoury snack — Diwali favourite.", image: PIMG.chakli },
   { id: "namkeen-mix", name: "Namkeen Mix", category: "snacks", desc: "House-blended savoury namkeen mix.", image: PIMG.namkeen },
-  { id: "chivda", name: "Chivda", category: "snacks", desc: "Light flattened rice mix with peanuts and curry leaves.", image: PIMG.namkeen },
+  { id: "chivda", name: "Chivda", category: "snacks", desc: "Light flattened rice mix with peanuts and curry leaves.", image: PIMG.chivda },
 
   // --- Protein Corner ---
-  { id: "protein-bar-classic", name: "Whey Protein Bar", category: "protein", desc: "High-protein bars for post-workout indulgence.", image: PIMG.importedChocolateAlt },
-  { id: "peanut-butter", name: "Natural Peanut Butter", category: "protein", desc: "Stone-ground natural peanut butter — no additives.", image: PIMG.sugarFree },
-  { id: "granola-mix", name: "Premium Granola Mix", category: "protein", desc: "Baked granola with dry fruits and honey.", image: PIMG.proteinLadoo },
+  { id: "protein-bar-classic", name: "Whey Protein Bar", category: "protein", desc: "High-protein bars for post-workout indulgence.", image: PIMG.proteinBar },
+  { id: "peanut-butter", name: "Natural Peanut Butter", category: "protein", desc: "Stone-ground natural peanut butter — no additives.", image: PIMG.peanutButter },
+  { id: "granola-mix", name: "Premium Granola Mix", category: "protein", desc: "Baked granola with dry fruits and honey.", image: PIMG.premiumGranolaMix },
 
   // --- Dry Fruits ---
-  { id: "cashew", name: "Premium Cashew (W180)", category: "dry-fruits", desc: "Handpicked jumbo cashews.", image: PIMG.dryFruits },
-  { id: "almonds", name: "California Almonds", category: "dry-fruits", desc: "Whole California almonds — freshly stocked.", image: PIMG.dryFruits },
-  { id: "pistachio", name: "Iranian Pistachios", category: "dry-fruits", desc: "Salted or plain — imported Iranian pistachios.", image: PIMG.dryFruits },
-  { id: "figs", name: "Afghan Anjeer (Figs)", category: "dry-fruits", desc: "Soft dried figs — naturally sweet.", image: PIMG.dryFruits },
-  { id: "walnut", name: "Kashmiri Walnut Halves", category: "dry-fruits", desc: "Whole Kashmiri walnut halves, freshly packed.", image: PIMG.dryFruits },
-  { id: "raisin", name: "Kishmish (Raisins)", category: "dry-fruits", desc: "Golden and green raisins — plump and sweet.", image: PIMG.dryFruits },
-  { id: "seedless-dates", name: "Seedless Black Dates", category: "dry-fruits", desc: "Rich, moist seedless dates.", image: PIMG.dryFruits },
+
 
   // --- Imported Coffee / Chocolate / Beverages ---
-  { id: "imported-coffee-cappuccino", name: "Imported Cappuccino Sachets", category: "imported-coffee", desc: "Ready-to-brew imported cappuccino sachets.", image: PIMG.importedCoffee },
-  { id: "imported-coffee-hazelnut", name: "Imported Hazelnut Coffee", category: "imported-coffee", desc: "Smooth hazelnut-flavoured instant coffee.", image: PIMG.importedCoffee },
-  { id: "imported-choco-ferrero", name: "Ferrero Rocher", category: "imported-chocolate", desc: "Classic Ferrero Rocher gift boxes.", image: PIMG.importedChocolate },
-  { id: "imported-choco-lindt", name: "Lindt Assorted", category: "imported-chocolate", desc: "Lindt fine Swiss chocolate assortments.", image: PIMG.importedChocolate },
-  { id: "imported-choco-german-mint", name: "German Mint Chocolate", category: "imported-chocolate", desc: "Refreshing German mint chocolate bars.", image: PIMG.importedChocolateAlt },
-  { id: "cadbury-cake", name: "Cadbury Cakes", category: "imported-chocolate", desc: "Cadbury cake bars, always in stock.", image: PIMG.importedChocolateAlt },
-  { id: "lotte-choco-pie", name: "Lotte Choco Pie", category: "imported-chocolate", desc: "Marshmallow-cream Lotte choco pies.", image: PIMG.importedBiscuits },
-  { id: "imported-macarons", name: "French Macarons", category: "imported-chocolate", desc: "Delicate pastel-hued French macarons.", image: PIMG.macarons },
-  { id: "imported-biscuits", name: "Imported Biscuits", category: "imported-chocolate", desc: "European butter cookies and chocolate biscuits.", image: PIMG.importedBiscuitsAlt },
-  { id: "juice-real", name: "Real Fruit Juice", category: "beverages", desc: "Chilled Real fruit juices — all seasons.", image: PIMG.beverages },
-  { id: "coconut-water", name: "Tender Coconut Water", category: "beverages", desc: "Bottled tender coconut water.", image: PIMG.beveragesAlt2 },
-  { id: "aloe-vera", name: "Aloe Vera Drink", category: "beverages", desc: "Refreshing aloe vera juice, chilled.", image: PIMG.beverages },
-  { id: "pepsi", name: "Pepsi / Sprite / Maaza", category: "beverages", desc: "Full range of chilled soft drinks.", image: PIMG.beverages },
-  { id: "milkshake", name: "Fresh Milkshake", category: "beverages", desc: "House-blended thick milkshakes.", image: PIMG.beveragesAlt },
+  
+ 
 
   // --- Sugar-Free ---
-  { id: "sf-kaju-katli", name: "Sugar-Free Kaju Katli", category: "sugar-free", desc: "Cashew fudge sweetened naturally — sugar-free.", image: PIMG.sugarFree },
-  { id: "sf-anjeer", name: "Sugar-Free Anjeer Barfi", category: "sugar-free", desc: "Fig-based barfi sweetened naturally.", image: PIMG.sugarFree },
+ 
+  { id: "sf-laddoo", name: "Sugar-Free Laddoo", category: "sugar-free", desc: "Ghee laddoo sweetened naturally.", image: PIMG.sugarFree },
   { id: "sf-dry-fruit-mix", name: "Sugar-Free Dry Fruit Mix", category: "sugar-free", desc: "Nut and seed mix, no added sugar.", image: PIMG.dryFruits },
 ];
 

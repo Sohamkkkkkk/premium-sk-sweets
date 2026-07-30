@@ -121,7 +121,8 @@ function ProductCard({ p }) {
       className="group flex flex-col bg-white border border-copper/10 rounded-[20px] overflow-hidden shadow-premium hover:shadow-premium-hover hover:-translate-y-0.5 transition-all duration-500"
     >
       <div className="img-zoom aspect-[4/3] border-b border-copper/10">
-        <img
+   
+ <img
           src={p.image}
           alt={p.name}
           loading="lazy"
