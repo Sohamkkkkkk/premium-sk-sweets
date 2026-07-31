@@ -125,7 +125,6 @@ export const PRODUCTS = [
  { id: "mathura-peda", name: "Mathura Peda", category: "milk", desc: "Deep-brown Mathura style — classic and nostalgic.", image: PIMG.mathuraPeda },
   { id: "gulkand-peda", name: "Gulkand Peda", category: "signature", desc: "House signature peda filled with rose petal preserve.", image: PIMG.gulkandPeda },
   { id: "kesar-puri", name: "Kesar Puri", category: "milk", desc: "Saffron milk barfi topped with pistachio slivers.", image: PIMG.kesarPuri },
-  { id: "malai-puri", name: "Malai Puri", category: "milk", desc: "Delicate malai barfi with silver varq.", image: PIMG.malaiPuri },
   { id: "mother-india-peda", name: "Mother India Peda", category: "milk", desc: "Rich khoya peda with a tri-colour flourish.", image: PIMG.motherIndiaPeda },
   { id: "milk-cake", name: "Milk Cake", category: "milk", desc: "Slow-cooked khoya cake with a caramel core.", image: PIMG.milkCake },
   { id: "kalakand", name: "Kalakand", category: "signature", desc: "House specialty — soft granular milk cake.", image: PIMG.kalakand },
