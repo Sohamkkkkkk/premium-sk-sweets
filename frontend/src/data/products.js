@@ -329,7 +329,7 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "Do you accept online orders?",
-    a: "Yes. You can place orders on WhatsApp (+91 98925 74913), order through Swiggy, or call us at +91 84604 60759. Home delivery is available across Dombivli and surrounding areas.",
+    a: "Yes. You can place orders on WhatsApp (+91 98925 74913), order through Swiggy, or call us at +91 98925 74913. Home delivery is available across Dombivli and surrounding areas.",
   },
   {
     q: "Do you take bulk & corporate orders?",
